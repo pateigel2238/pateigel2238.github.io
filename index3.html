@@ -18,8 +18,49 @@
 <script>
 function myFunction()
 {
-var x = document.getElementById('ccfrm');
-document.getElementById("demo").innerHTML = x;
+			var sum = 0;    
+            var sumOfDoubles = 0;
+            var sumOfNonDoubles = 0;
+            var x = document.getElementById('cc').value;
+            var result;
+            var first = x.substring(0, 1); //take first digit(even length/odd length), add check in double
+            var frst = parseInt(first);
+            if (x.length % 2 == 0)
+            {
+               frst = frst * 2;
+               if (frst >= 10)
+               {
+                   frst = 1 + (frst % 10);
+               }
+            }
+            sum = sum + frst;
+            if (x.length < 13 || x.length > 16) {
+                result = "Credit Credit is not valid.";
+            } else {
+                for (var i = 1; i < x.length; i = i + 2) {
+                    var y = x.substring(x.length - i, x.length - (i - 1));
+                    var z = parseInt(y);
+                    sumOfNonDoubles = sumOfNonDoubles + z;
+                }
+                for (var i = 2; i < x.length; i = i + 2) {
+                    var y = x.substring(x.length - i, x.length - (i - 1)); //or length equal 2, then take sub of each and then parse then add to eachother then add to total
+                    var z = parseInt(y); //greater than or equal to 10?
+                    z = z * 2;
+                    if (z >= 10)
+                    {
+                        z = 1 + (z % 10);
+                    }
+                    sumOfDoubles = sumOfDoubles + z;
+                }
+                sum = sum + sumOfDoubles + sumOfNonDoubles;
+                var out = sum % 10;
+                if (out == 0) {
+                    result = "Valid";
+                } else {
+                    result = "Credit Card is not Valid";
+                }
+            }
+			document.getElementById("demo").innerHTML = result;
 }
 </script>
 </body>
