@@ -9,9 +9,18 @@
 </head>
 
 <body>
-<form>
+<form id="ccfrm">
 <label for="cc">Input Credit Card:</label>
 <input type="text" id="cc" name ="cc"><br><br>
 </form>
+<button onclick="myFunction()">Valid?</button>
+<p id="demo"></p>
+<script>
+function myFunction()
+{
+var x = document.getElementById("ccfrm");
+if (13 > x.length || x.length > 16)
+{document.getElementById("demo").innerHTML = "False";}
+}
 </body>
 </html>
