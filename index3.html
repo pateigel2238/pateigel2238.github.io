@@ -18,16 +18,8 @@
 <script>
 function myFunction()
 {
-var x = document.getElementById("ccfrm");
-var result;
-if (x.length < 13)
-{
-result = "Credit Credit is not valid.";
-}
-else{
-result = "Valid";
-}
-document.getElementById("demo").innerHTML = result;
+var x = document.getElementById('ccfrm').value;
+document.getElementById("ccfrm").innerHTML = x;
 }
 </script>
 </body>
