@@ -19,12 +19,14 @@
 function myFunction()
 {
 var x = document.getElementById("ccfrm");
+var result;
 if (13 > x.length || x.length > 16)
-{document.getElementById("demo").innerHTML = "False";
-document.getElementById("demo").innerHTML = "x";}
-else{
-document.getElementById("demo").innerHTML = "y";
+{result = "Credit Credit is not valid.";
 }
+else{
+result = "Valid";
+}
+document.getElementById("demo").innerHTML = result;
 }
 </script>
 </body>
